@@ -1,7 +1,7 @@
 create database if not exists controle_estoque;
 use controle_estoque;
 
-create table categorias; (
+create table categorias (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(50) NOT NULL,
     descricao TEXT,
