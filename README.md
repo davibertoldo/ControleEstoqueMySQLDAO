@@ -11,7 +11,7 @@
 
 ### Banco de dados
 
-- Abaixo o script para a criação do banco de dados e da tabela. O script completo está no arquivo [banco.sql](banco.sql).
+- Abaixo o script para a criação do banco de dados e da tabela. O script completo está no arquivo [controledbestoque.sql](controledbestoque.sql).
 
 ```
 create database if not exists controle_estoque;
