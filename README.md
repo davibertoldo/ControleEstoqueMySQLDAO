@@ -2,7 +2,7 @@
 
 ## Contextualização
 
- - Esta é uma versão do sistema para a IDE NetBeans.<br> 
+ - Esta é uma versão do sistema para a IDE NetBeans.<br>
  - O projeto no NetBeans é chamado ControleEstoqueMySQLDAO.<br>
  - Os dados estão armazenados no banco de dados MySQL.<br>
  - Este programa possui diversas classes organizada nos pacotes, principal, visao, dao e modelo.<br>
@@ -38,19 +38,7 @@ CREATE TABLE produtos (
 
 ```
 
-### Interface gráfica
-
-## Tela do menu principal do programa.
-![tela1](tela1.png)
-
-## Tela para cadastrar novos alunos.
-![tela2](tela2.png)
-
-## Tela para gerenciar alunos (alterar e apagar).
-![tela3](tela3.png)
-
 ## Arquivos
 
-- banco.sql - Script do banco de dados.
+- controledbestoque.sql - Script do banco de dados.
 - pom.xml - Arquivo de configuração da ferramenta de automação Maven.
-- *.png - Arquivos de imagens do README.md.
