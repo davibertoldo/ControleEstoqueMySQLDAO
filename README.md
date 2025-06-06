@@ -1,9 +1,9 @@
-# Interface Gráfica para o Cadastro de Aluno usando um DAO com MySQL usando a IDE NetBeans.
+# Interface Gráfica para Controle de Estoque usando um DAO com MySQL usando a IDE NetBeans.
 
 ## Contextualização
 
  - Esta é uma versão do sistema para a IDE NetBeans.<br> 
- - O projeto no NetBeans deve ser chamado CadastroAlunoMySQLDAO.<br>
+ - O projeto no NetBeans é chamado ControleEstoqueMySQLDAO.<br>
  - Os dados estão armazenados no banco de dados MySQL.<br>
  - Este programa possui diversas classes organizada nos pacotes, principal, visao, dao e modelo.<br>
  - A pasta src contêm os fontes do projeto.<br>
@@ -14,24 +14,27 @@
 - Abaixo o script para a criação do banco de dados e da tabela. O script completo está no arquivo [banco.sql](banco.sql).
 
 ```
-#criar o database chamado db_alunos
-create database if not exists db_alunos;
+create database if not exists controle_estoque;
+use controle_estoque;
 
-#entrar no database db_alunos
-use db_alunos;
-
-#remove a tabela para recriá-la
-drop table if exists tb_alunos;
-
-#cria a tabela de tb_alunos
-CREATE TABLE tb_alunos ( 
-    id      INTEGER NOT NULL, 
-    nome    VARCHAR(100), 
-    idade   INTEGER,
-    curso   VARCHAR(50),
-    fase    INTEGER,
-    PRIMARY KEY(id)
+create table categorias (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(50) NOT NULL,
+    descricao TEXT,
+    data_cadastro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+CREATE TABLE produtos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    preco_unitario DECIMAL(10,2) NOT NULL,
+    unidade VARCHAR(20) NOT NULL COMMENT 'Ex: un, kg, lt, m, etc',
+    quantidade_estoque INT DEFAULT 0,
+    quantidade_minima INT DEFAULT 0,
+    quantidade_maxima INT DEFAULT 0,
+    categoria_id INT,
+    data_cadastro TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    data_atualizacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (categoria_id) REFERENCES categorias(id));
 
 ```
 
